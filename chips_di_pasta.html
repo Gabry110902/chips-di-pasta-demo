@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chips di Pasta - Personalizza la tua confezione</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #9b1b30;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .customization-section {
+            margin-top: 20px;
+        }
+
+        .preview-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .preview {
+            border: 2px solid #ddd;
+            display: inline-block;
+            padding: 20px;
+            width: 200px;
+            height: 300px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #9b1b30;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7a1422;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Personalizza la tua confezione di Chips di Pasta</h1>
+        <p>Crea la confezione perfetta per ogni occasione!</p>
+    </header>
+
+    <div class="container">
+        <section class="customization-section">
+            <h2>Personalizza la tua confezione</h2>
+            <div class="input-field">
+                <label for="custom-message">Messaggio personalizzato:</label><br>
+                <input type="text" id="custom-message" placeholder="Aggiungi un messaggio">
+            </div>
+            <div class="input-field">
+                <label for="recipient-name">Nome destinatario:</label><br>
+                <input type="text" id="recipient-name" placeholder="Inserisci il nome">
+            </div>
+            <button onclick="updatePreview()">Aggiorna anteprima</button>
+        </section>
+
+        <section class="preview-container">
+            <h2>Anteprima Confezione</h2>
+            <div class="preview" id="preview-box">
+                <p id="preview-text">Anteprima del tuo messaggio</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function updatePreview() {
+            var message = document.getElementById("custom-message").value;
+            var recipient = document.getElementById("recipient-name").value;
+            var previewText = message + (recipient ? "<br>Per " + recipient : "");
+            document.getElementById("preview-text").innerHTML = previewText;
+        }
+    </script>
+
+</body>
+</html>
